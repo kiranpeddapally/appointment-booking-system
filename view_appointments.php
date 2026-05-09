@@ -18,42 +18,89 @@ $result = $conn->query($sql);
 <head>
     <title>View Appointments</title>
 
-    <style>
+   <style>
 
-        body{
-            font-family:Arial;
-            background:#f4f4f4;
-            padding:30px;
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f6f9;
+    padding:30px;
+}
 
-        table{
-            width:100%;
-            border-collapse:collapse;
-            background:white;
-        }
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#333;
+}
 
-        th, td{
-            padding:12px;
-            border:1px solid #ccc;
-            text-align:center;
-        }
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-        th{
-            background:#007bff;
-            color:white;
-        }
+th{
+    background:#007bff;
+    color:white;
+    padding:15px;
+}
 
-        h1{
-            text-align:center;
-        }
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
 
-    </style>
+tr:hover{
+    background:#f1f1f1;
+}
+
+a{
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:5px;
+    color:white;
+    font-size:14px;
+}
+
+.edit-btn{
+    background:#28a745;
+}
+
+.delete-btn{
+    background:#dc3545;
+}
+
+.edit-btn:hover{
+    background:#218838;
+}
+
+.delete-btn:hover{
+    background:#c82333;
+}
+
+</style>
 
 </head>
 
 <body>
 
 <h1>All Appointments</h1>
+
+<div style="text-align:center; margin-bottom:20px;">
+
+<a href="index.php"
+style="
+background:#007bff;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+border-radius:5px;
+">
+Back to Booking
+</a>
+
+</div>
 
 <table>
 
@@ -83,12 +130,15 @@ while($row = $result->fetch_assoc()) {
 <td><?php echo $row['appointment_time']; ?></td>
 <td><?php echo $row['service']; ?></td>
 <td>
-    <a href="backend/delete_appointment.php?id=<?php echo $row['id']; ?>">
+    <a class="delete-btn"
+href="backend/delete_appointment.php?id=<?php echo $row['id']; ?>"
+onclick="return confirm('Are you sure you want to delete this appointment?')">
+
         Delete
     </a>
 </td>
 <td>
-    <a href="edit_appointment.php?id=<?php echo $row['id']; ?>">
+    <a class="edit-btn" href="edit_appointment.php?id=<?php echo $row['id']; ?>">
         Edit
     </a>
 </td>
