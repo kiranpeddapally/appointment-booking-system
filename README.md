@@ -1,25 +1,25 @@
-# Appointment Booking CRUD System
+# Appointment Booking System
 
-A web-based appointment booking system developed using PHP and MySQL.
+## Technologies Used
+- React
+- PHP
+- MySQL
+- Postman
+- GitHub
 
 ## Features
-- Create appointments
+- Add appointments
 - View appointments
 - Edit appointments
 - Delete appointments
+- REST API integration
+- React frontend
 
-## Technologies Used
-- HTML
-- CSS
-- PHP
-- MySQL
-- XAMPP
-- GitHub
-
-## Database
-Database Name: appointment_db
-
-Table Name: appointments
+## Testing
+- GET API testing
+- POST API testing
+- UPDATE API testing
+- DELETE API testing
 
 ## Author
 Peddapally Saikiran
