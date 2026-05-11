@@ -20,17 +20,14 @@ $row = $result->fetch_assoc();
 <html>
 
 <head>
-    <title>Edit Appointment</title>
-</head>
 
-<body>
+<title>Edit Appointment</title>
 
-<h1>Edit Appointment</h1>
 <style>
 
 body{
-    font-family:Arial, sans-serif;
-    background:linear-gradient(to right, #dfe9f3, #ffffff);
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #dfe9f3, #ffffff);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -80,7 +77,6 @@ button{
     border-radius:8px;
     font-size:16px;
     cursor:pointer;
-    transition:0.3s;
 }
 
 button:hover{
@@ -89,29 +85,38 @@ button:hover{
 
 </style>
 
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Edit Appointment</h1>
+
 <form action="backend/update_appointment.php" method="POST">
 
 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
-<label>Name</label><br>
-<input type="text" name="name" value="<?php echo $row['name']; ?>"><br><br>
+<label>Name</label>
+<input type="text" name="name" value="<?php echo $row['name']; ?>">
 
-<label>Email</label><br>
-<input type="email" name="email" value="<?php echo $row['email']; ?>"><br><br>
+<label>Email</label>
+<input type="email" name="email" value="<?php echo $row['email']; ?>">
 
-<label>Date</label><br>
-<input type="date" name="appointment_date" value="<?php echo $row['appointment_date']; ?>"><br><br>
+<label>Date</label>
+<input type="date" name="appointment_date" value="<?php echo $row['appointment_date']; ?>">
 
-<label>Time</label><br>
-<input type="time" name="appointment_time" value="<?php echo $row['appointment_time']; ?>"><br><br>
+<label>Time</label>
+<input type="time" name="appointment_time" value="<?php echo $row['appointment_time']; ?>">
 
-<label>Service</label><br>
-<input type="text" name="service" value="<?php echo $row['service']; ?>"><br><br>
+<label>Service</label>
+<input type="text" name="service" value="<?php echo $row['service']; ?>">
 
 <button type="submit">Update Appointment</button>
 
 </form>
+
 </div>
+
 </body>
-<div class="container">
 </html>
